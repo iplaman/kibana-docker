@@ -14,6 +14,8 @@ endif
 ELASTIC_REGISTRY=docker.elastic.co
 VERSIONED_IMAGE=$(ELASTIC_REGISTRY)/kibana/kibana:$(VERSION_TAG)
 
+all: build
+
 test: lint build docker-compose.yml
 	./bin/testinfra tests
 
